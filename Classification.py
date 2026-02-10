@@ -6,9 +6,9 @@ from sklearn.ensemble import RandomForestClassifier
 @st.cache_data
 def load_data():
     iris = load_iris()
-    df = pd.DataFrame(iris.data, columns=iris.feature_names)
-    df["species"] = iris.target
-    return df, iris.target_names
+    df = pd.DataFrame(iris.data, columns=iris.feature_names) # type: ignore
+    df["species"] = iris.target # type: ignore
+    return df, iris.target_names # type: ignore
 
 df, target_name = load_data()
 
